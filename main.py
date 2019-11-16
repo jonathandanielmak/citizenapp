@@ -13,18 +13,15 @@ def sms_ahoy_reply():
 
     # Add a message
     if body == "hello":
-        resp.message("Hi! How can I help? \n (1) Riot \n (2) Animals \n (3) Grafiti")
+        resp.message("Hi! This is Citizen help. \n If there is an issue, reply: HELP"
+    if body == "HELP":
+        resp.message("What is the issue? \n (1) Riot \n (2) Animals \n (3) Grafiti \n (4) Noise Complaint")
+    else:
+        resp.message("Have a good day!")
 
     
-    # jmak is stupid
-
-
-
 
     return str(resp)
-
-
-
 
 
 
