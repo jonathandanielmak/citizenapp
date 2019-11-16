@@ -1,18 +1,33 @@
-from twilio.rest import Client
+from flask import Flask, request
+from twilio.twiml.messaging_response import MessagingResponse
+
+app = Flask(__name__)
+
+@app.route("/sms", methods=['GET', 'POST'])
+def sms_ahoy_reply():
+    """Respond to incoming messages with a friendly SMS."""
+    # Start our response
+    body = request.values.get('Body', None)
+
+    resp = MessagingResponse()
+
+    # Add a message
+    if body == "hello":
+        resp.message("Hi! How can I help? \n (1) Riot \n (2) Animals \n (3) Grafiti")
+
+    
 
 
-# Your Account Sid and Auth Token from twilio.com/console
-# DANGER! This is insecure. See http://twil.io/secure
-account_sid = 'ACde1b2cae6c069719a0b93f980623cddc'
-auth_token = 'ac5a3921290d2ca1b0215ba73c56586a'
-client = Client(account_sid, auth_token)
 
-message = client.messages \
-                .create(
-                     body="Hello! What can I help you with?",
-                     from_='+12055574327',
-                     to='+16266882932'
-                 )
 
-print(message.sid)
 
+    return str(resp)
+
+
+
+
+
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
