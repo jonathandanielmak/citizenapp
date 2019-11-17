@@ -24,10 +24,7 @@ def incoming_sms():
     Trash_Blockage_Vandelism = {'Illegal Parking':['City of Boston','311'],'Graffiti':['Property Management','6176354100'],'Trash on Streets':['Public Works','6176354900'],'Road Kill':['Boston 311','311'],'Blockage on Roadways':['Boston Transportation Department','617 3434570']}
     print(body)
     if body == "hello":
-        resp.message("Hi! This is Citizen help. \n If there is an issue, reply: boston")
-        return str(resp)
-    elif body == "boston":
-        resp.message("What is the issue? \n (1) Environmental_Housing \n (2) Maintenance_Housing \n (3) People_Human_Services \n (4) Trash_Blockage_Vandalism")
+        resp.message("Hi! This is Citizen help. \n What is the issue? \n (1) Environmental_Housing \n (2) Maintenance_Housing \n (3) People_Human_Services \n (4) Trash_Blockage_Vandalism")
         return str(resp)
     
     # Code for body 1 --> copy this format for the rest of the code and you should be fine
