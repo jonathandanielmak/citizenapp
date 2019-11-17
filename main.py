@@ -23,7 +23,7 @@ def incoming_sms():
     People_Human_Services = {'Riot Protest':['Boston Police Department','6173434633'],'Noise':['City of Boston','6176353850'],'Transients':['Boston Public Health Commission - Homeless services','6175342526'],'Drug Activity':['Boston Police Department','6173434633'],'Drug Addiction':['Boston ASAP Counseling','6174825292'],'Public Nudity':['Bos 311','311'],'Underage Drinking':['Boston Police Department','6176350029'],'Suspected Child Abuse':['Department of Children and Families','6177482000'],'Suspected Abuse':['Nationwide Safelink','8777852020'],'Racism':['Resilence and Racial Equality','6176350029'],'Political Dishonesty':['City Boston','6176358683'],'Drunk Driving':['Boston Police Department','911'],'Robbery':['Boston Police Department','911'],'Lost Person':['National Center for Lost Missing and Exploited','8008435678']}
     Trash_Blockage_Vandelism = {'Illegal Parking':['City of Boston','311'],'Graffiti':['Property Management','6176354100'],'Trash on Streets':['Public Works','6176354900'],'Road Kill':['Boston 311','311'],'Blockage on Roadways':['Boston Transportation Department','617 3434570']}
     print(body)
-    if body == "hello":
+    if body != "":
         resp.message("Hi! This is Citizen help. \n What is the issue? \n (1) Environmental_Housing \n (2) Maintenance_Housing \n (3) People_Human_Services \n (4) Trash_Blockage_Vandalism")
         return str(resp)
     
