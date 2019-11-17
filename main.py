@@ -15,7 +15,7 @@ def incoming_sms():
 
     # Start our TwiML response
     resp = MessagingResponse()
-    saved = session.get("saved", 0)
+    # saved = session.get("saved", 0)
     # Determine the right reply for this message
   
     Environmental_Wildlife = {'Abandoned Animal':['MSPCA - Animal Cruelty','8006285808'] , 'Flooding':['Boston Water and Flooding','6176353850'], 'Air/Water Pollution':['National Response Center','18004248802'],'Pest Control':['Security Pest Control','6172649898']}
@@ -23,12 +23,12 @@ def incoming_sms():
     People_Human_Services = {'Riot Protest':['Boston Police Department','6173434633'],'Noise':['City of Boston','6176353850'],'Transients':['Boston Public Health Commission - Homeless services','6175342526'],'Drug Activity':['Boston Police Department','6173434633'],'Drug Addiction':['Boston ASAP Counseling','6174825292'],'Public Nudity':['Bos 311','311'],'Underage Drinking':['Boston Police Department','6176350029'],'Suspected Child Abuse':['Department of Children and Families','6177482000'],'Suspected Abuse':['Nationwide Safelink','8777852020'],'Racism':['Resilence and Racial Equality','6176350029'],'Political Dishonesty':['City Boston','6176358683'],'Drunk Driving':['Boston Police Department','911'],'Robbery':['Boston Police Department','911'],'Lost Person':['National Center for Lost Missing and Exploited','8008435678']}
     Trash_Blockage_Vandelism = {'Illegal Parking':['City of Boston','311'],'Graffiti':['Property Management','6176354100'],'Trash on Streets':['Public Works','6176354900'],'Road Kill':['Boston 311','311'],'Blockage on Roadways':['Boston Transportation Department','617 3434570']}
     print(body)
-    if body in ["Hello", "Hey", "Hi", "hello", "hey", "hi"]:
-        resp.message("Hi! This is Citizen help. \n What is the issue? \n (1) Environmental Housing \n (2) Maintenance Housing \n (3) People Human Services \n (4) Trash BlockageVandalism")
-
+    if body in ["Hello", "Hi", "Hey", "hi", "hello", "hey"]:
+        resp.message("Hi! This is Citizen help. \n What is the issue? \n (1) Environmental Housing \n (2) Maintenance Housing \n (3) People Human Services \n (4) Trash Blockage Vandalism")
+        return str(resp)
     
-    # Code for category choices
-    elif body == "1":
+    # Code for body 1 --> copy this format for the rest of the code and you should be fine
+    if body == "1":
         res_message = ""
         for key in Environmental_Wildlife.keys():
             res_message += str(key) + "\n "
